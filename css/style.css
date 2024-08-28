@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0F8FF;
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container{
+    padding: 2px;
+    /* margin-left: 250px; */
+    display: flex;
+    flex-direction: column;
+}
+/* header  */
+
+.sidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #042331;
+    transition: all .5s ease;
+    z-index: 1000;
+}
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+    transition: all .5s ease;
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+}
+ul li:hover a{
+    padding-left: 50px;
+}
+.sidebar ul a i{
+    margin-right: 16px;
+}
+#check{
+   display: none;
+
+}
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+}
+label #btn{
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5;
+}
+label #cancel{
+    z-index: 1111;
+    left: 195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    opacity: 0;
+    transition: all .5s ease;
+    pointer-events: none;
+
+}
+input:checked ~ .sidebar{
+    left: 0;
+}
+input:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+input:checked ~ label #cancel{
+    left: 195px;
+    opacity: 1;
+    pointer-events: auto;
+
+}
+.header-title{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 24px;
+    color: #042331;
+    font-weight: bold;
+}
+.slider-wrapper{
+    position: relative;
+    width: 100%;
+    /* max-width: 48rem; */
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.slider{
+    display: flex;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.slide{
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    height: 400px;
+}
+.slider-nav{
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.dot{
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.active{
+    background-color: #717171;
+}
+.about-e-gov{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #717171;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+.about-e-gov h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-e-gov p{
+    text-align: justify;
+    padding: 5px;
+}
+.about-e-gov ul{
+    padding-left: 20px;
+}
+.about-e-gov li{
+    padding: 5px;
+    list-style-type: disc;
+}
+
+/*Kartice */
+
+.card-display{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 20px;
+}
+.card{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1, green, blue, alpha);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    height: auto;
+}
+.card:hover{
+    transform:scale(0.97)
+}
+.card img{
+    border-radius: 10px;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.card button{
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    background-color: #00FFFF;
+}
+.card-content{
+    margin-bottom: 15px;
+}
+.learn-more{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.learn-more:hover{
+    background-color: #0056b3;
+}
+
+/* Statistika */
+.statistics{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin-top: 50px;
+}
+.stat{
+    flex: 1;
+    margin: 0 20px;
+}
+.stat h2{
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.stat p{
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Futer */
+
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+
+}
+
+
+.footer-links{
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+.footer-links li{
+    display: inline;
+    margin: 0 10px;
+}
+.footer-links a{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+}
+.footer-links a:hover{
+    text-decoration: underline;
+    color: #ddd
+}
